@@ -1,5 +1,5 @@
 import React from "react";
-import { GoodreadsBookshelf } from "../dist/index";
+import { LibrarythingsBookshelf } from "../dist/index";
 
 const sorts = [
 	"title",
@@ -38,8 +38,8 @@ const sorts = [
 const shelves = ["read", "currently-reading", "to-read"];
 
 export default {
-	title: "GoodreadsBookshelf",
-	component: GoodreadsBookshelf,
+	title: "LibrarythingsBookshelf",
+	component: LibrarythingsBookshelf,
 	argTypes: {
 		userId: {
 			name: "User ID",
@@ -114,4 +114,4 @@ export default {
 	},
 };
 
-export const Story = (args) => <GoodreadsBookshelf {...args} />;
+export const Story = (args) => <LibrarythingsBookshelf {...args} />;

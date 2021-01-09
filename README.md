@@ -1,4 +1,4 @@
-# react-goodreads-shelf
+# react-librarything-shelf
 ![build](https://github.com/kylekarpack/react-goodreads-shelf/workflows/build/badge.svg) ![CodeQL](https://github.com/kylekarpack/react-goodreads-shelf/workflows/CodeQL/badge.svg)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=kylekarpack_react-goodreads-shelf&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=kylekarpack_react-goodreads-shelf) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kylekarpack_react-goodreads-shelf&metric=coverage)](https://sonarcloud.io/dashboard?id=kylekarpack_react-goodreads-shelf)
 
@@ -9,22 +9,22 @@ This React component allows you to display a public Goodreads shelf in a React a
 ## Installation
 
 ```
-npm install --save react-goodreads-shelf
+npm install --save react-librarything-shelf
 ```
 or
 ```
-yarn add react-goodreads-shelf
+yarn add react-librarything-shelf
 ```
 
 ## Usage
 
 ```jsx
 import React from "react";
-import { GoodreadsBookshelf } from "react-goodreads-shelf";
+import { LibrarythingBookshelf } from "react-librarything-shelf";
 
 export default function App() {
 	return (
-		<GoodreadsBookshelf userId="USER_ID_HERE" apiKey="API_KEY_HERE" />
+		<LibrarythingBookshelf userId="USER_ID_HERE" apiKey="API_KEY_HERE" />
 	);
 }
 ```

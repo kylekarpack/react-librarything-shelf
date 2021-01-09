@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Xml } from "../util/xml2js-utils";
 import BookList from "./BookList";
 import Loader from "./Loader";
 
@@ -11,10 +10,11 @@ export default (props) => {
 	});
 
 	const getUrl = () => {
-		// Build a request to the Goodreads API
-		const url = new URL(
-			`https://cors-anywhere.herokuapp.com/https://www.goodreads.com/review/list/${props.userId}`
-		);
+		// Build a request to the LibraryThings API
+		const url = new URL("https://www.librarything.com/api_getdata.php");
+		url.searchParams.set("userid", "kylekarpack");
+		url.searchParams.set("responseType", "json");
+
 		url.searchParams.set("key", props.apiKey);
 		url.searchParams.set("per_page", props.limit || 10);
 		url.searchParams.set("shelf", props.shelf || "read");
@@ -27,25 +27,27 @@ export default (props) => {
 			url.searchParams.set("search[query]", props.search);
 		}
 
-		url.searchParams.set("v", 2);
 		return url;
 	};
 
 	const getBooksJson = async () => {
 		if (typeof window !== "undefined" && window.fetch) {
+
 			const url = getUrl();
 			const response = await fetch(url);
-			const xmlText = await response.text();
-			const json = Xml.parseXmlStringToObject(xmlText);
+			const json = await response.json();
+			
+			const books = [];
+			const booksObj = json.books;
+			for (let key in booksObj) {
+				const book = booksObj[key];
+				if (!book.cover) {
+					book.cover = `https://covers.openlibrary.org/b/isbn/${book.ISBN}-M.jpg?default=false`;
 
-			// This is where the list of books is stored:
-			const books = json?.GoodreadsResponse?.reviews || [];
-			for (let { book } of books) {
-				if (book?.image_url?.includes("/nophoto/")) {
-					book.image_url = `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false`;
 				}
+				books.push(book);
 			}
-
+			console.warn(books)
 			return books;
 		} else {
 			throw "Error: fetch is not defined in this environment";
@@ -85,7 +87,7 @@ export default (props) => {
 	}, [props]);
 
 	return (
-		<div className="goodreads-shelf">
+		<div className="librarythings-shelf">
 			{state.loaded ? (
 				<BookList books={state.books} bookWidth={props.width} />
 			) : (

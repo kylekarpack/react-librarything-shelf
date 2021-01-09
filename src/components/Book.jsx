@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Placeholder from "./Placeholder";
-import Loader from "./Loader";
+import React, { useState } from "react";
 import Modal from "react-modal";
+import BookDetails from "./BookDetails";
+import Placeholder from "./Placeholder";
 
 const bookStyle = {
 	textAlign: "left",
@@ -37,53 +37,12 @@ const authorStyle = {
 
 const modalStyles = {
 	content: {
-		top: "50%",
 		left: "50%",
-		right: "auto",
-		bottom: "auto",
-		marginRight: "-50%",
-		transform: "translate(-50%, -50%)",
-		maxWidth: "50rem",
+		transform: "translateX(-50%)",
+		width: "50%",
+		maxWidth: "100rem",
+		minWidth: "20rem"
 	},
-};
-
-const BookDetails = ({ book }) => {
-	const [state, setState] = useState({ loading: true });
-
-	const remove = (dom, selector) => {
-		const elements = dom.querySelectorAll(selector);
-		elements.forEach((el) => el.remove());
-	};
-
-	useEffect(() => {
-		const getDetails = async () => {
-			const url = new URL("https://www.librarything.com/widget_work.php");
-			url.searchParams.set("book", book.book_id);
-			const data = await fetch(url);
-			const text = await data.text();
-			const parser = new DOMParser();
-			const dom = parser.parseFromString(text, "text/html");
-			remove(dom, ".topframe, .booklinks");
-			const content = dom.querySelector(".smallcontent");
-			content.style.fontSize = ".75rem";
-			const thumb = dom.querySelector(".thumbnail");
-			thumb.style.float = "right";
-			thumb.style.marginLeft = "2rem";
-
-			setState({
-				loading: false,
-				details: dom.body.innerHTML,
-			});
-		};
-
-		getDetails();
-	}, []);
-
-	if (state.loading) {
-		return <Loader />;
-	}
-
-	return <div dangerouslySetInnerHTML={{ __html: state.details }}></div>;
 };
 
 export default ({ book, showDetails }) => {

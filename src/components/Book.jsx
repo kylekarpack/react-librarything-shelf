@@ -40,9 +40,6 @@ export default ({ book, showDetails }) => {
 		return "";
 	}
 
-	// Truncate description
-	book.description = book.description?.toString()?.substring(0, 200) + "...";
-
 	return (
 		<div style={bookStyle} title={book.title}>
 			<a href={book.link} target="_blank">
@@ -51,18 +48,15 @@ export default ({ book, showDetails }) => {
 				) : (
 					<img
 						style={imageStyle}
-						src={book.image_url}
+						src={book.cover}
 						onError={() => setState({ error: true })}
 					/>
 				)}
 			</a>
 			{showDetails && (
 				<div>
-					<small style={authorStyle}>{book.authors.author.name}</small>
+					<small style={authorStyle}>{book.author_fl}</small>
 					<span style={titleStyle}>{book.title}</span>
-					<p
-						style={descriptionStyle}
-						dangerouslySetInnerHTML={{ __html: book.description }}></p>
 				</div>
 			)}
 		</div>

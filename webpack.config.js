@@ -14,15 +14,15 @@ module.exports = {
 				test: /\.svg$/,
 				use: [
 					{
-						loader: "babel-loader"
+						loader: "babel-loader",
 					},
 					{
 						loader: "react-svg-loader",
 						options: {
-							jsx: true // true outputs JSX tags
-						}
-					}
-				]
+							jsx: true, // true outputs JSX tags
+						},
+					},
+				],
 			},
 			{
 				test: /\.(js|jsx)$/,
@@ -46,6 +46,13 @@ module.exports = {
 			commonjs2: "react",
 			amd: "React",
 			root: "React",
+		},
+		"react-dom": {
+			root: "ReactDOM",
+			commonjs2: "react-dom",
+			commonjs: "react-dom",
+			amd: "react-dom",
+			umd: "react-dom",
 		},
 	},
 };

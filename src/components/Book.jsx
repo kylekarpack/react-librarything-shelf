@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Modal from "react-modal";
 import BookDetails from "./BookDetails";
+import Popup from "reactjs-popup";
 import Placeholder from "./Placeholder";
 
 const bookStyle = {
@@ -35,15 +35,18 @@ const authorStyle = {
 	padding: "0.5rem 0",
 };
 
-const modalStyles = {
-	content: {
-		left: "50%",
-		transform: "translateX(-50%)",
-		width: "50%",
-		maxWidth: "100rem",
-		minWidth: "20rem"
-	},
+const contentStyle = {
+	background: "#fff",
+	color: "#000",
+	padding: "1rem 2rem",
+	width: "50%",
+	maxWidth: "80rem",
+	minWidth: "25rem",
+	maxHeight: "80%",
+	overflowY: "auto",
 };
+const overlayStyle = { background: "rgba(0,0,0,0.5)" };
+const arrowStyle = { color: "#000" };
 
 export default ({ book, showDetails }) => {
 	const [state, setState] = useState({ error: false });
@@ -54,13 +57,13 @@ export default ({ book, showDetails }) => {
 
 	return (
 		<div style={bookStyle} title={book.title}>
-			<Modal
-				isOpen={state.showModal}
-				ariaHideApp={false}
-				style={modalStyles}
-				onRequestClose={() => setState({ showModal: false })}>
+			<Popup
+				open={state.showModal}
+				onClose={() => setState({ showModal: false })}
+				closeOnDocumentClick
+				{...{ contentStyle, overlayStyle, arrowStyle }}>
 				<BookDetails book={book} />
-			</Modal>
+			</Popup>
 			<a onClick={() => setState({ showModal: true })}>
 				{state.error ? (
 					<Placeholder />

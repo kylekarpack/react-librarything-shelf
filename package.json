@@ -38,19 +38,18 @@
     "jest-fetch-mock": "^2.1.2",
     "jest-sonar-reporter": "^2.0.0",
     "jest-svg-transformer": "^1.0.0",
-    "react": "^16.13.1",
-    "react-dom": "16.13.1",
     "react-svg-loader": "^3.0.3",
     "react-test-renderer": "16.13.1",
     "webpack": "^4.34.0",
     "webpack-cli": "^3.3.12"
   },
   "peerDependencies": {
-    "react": "^17.0.0"
+		"react": "^17.0.0",
+		"react-dom": "^17.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.11.0",
-    "reactjs-popup": "^2.0.4"
+		"@babel/runtime": "^7.11.0",
+		"reactjs-popup": "^2.0.4"
   },
   "scripts": {
     "test": "jest",

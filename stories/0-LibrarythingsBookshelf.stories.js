@@ -40,7 +40,7 @@ export default {
 				max: 400,
 			},
 		},
-		details: {
+		showDetails: {
 			name: "Details",
 			defaultValue: false,
 			control: {
@@ -70,21 +70,6 @@ export default {
 			control: {
 				type: "select",
 				options: sorts,
-			},
-		},
-		order: {
-			name: "Order",
-			defaultValue: "d",
-			control: {
-				type: "inline-radio",
-				options: ["a", "d"],
-			},
-		},
-		search: {
-			name: "Search Text",
-			defaultValue: "",
-			control: {
-				type: "text",
 			},
 		},
 	},

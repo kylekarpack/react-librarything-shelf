@@ -9,11 +9,18 @@ const shelfStyle = (minWidth) => {
 	};
 };
 
-export default ({ books, bookWidth }) => {
+export default ({ books, bookWidth, showDetails }) => {
 	return (
 		<div style={shelfStyle(bookWidth)}>
 			{books.map((book) => {
-				return <Book key={book.book_id} book={book} bookWidth={bookWidth} />;
+				return (
+					<Book
+						key={book.book_id}
+						book={book}
+						bookWidth={bookWidth}
+						showDetails={showDetails}
+					/>
+				);
 			})}
 		</div>
 	);

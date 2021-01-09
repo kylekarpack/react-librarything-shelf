@@ -3,7 +3,6 @@ import BookList from "./BookList";
 import Loader from "./Loader";
 
 export default (props) => {
-
 	const [state, setState] = useState({
 		books: [],
 		loaded: false,
@@ -32,18 +31,16 @@ export default (props) => {
 
 	const getBooksJson = async () => {
 		if (typeof window !== "undefined" && window.fetch) {
-
 			const url = getUrl();
 			const response = await fetch(url);
 			const json = await response.json();
-			
+
 			const books = [];
 			const booksObj = json.books;
 			for (let key in booksObj) {
 				const book = booksObj[key];
 				if (!book.cover) {
 					book.cover = `https://covers.openlibrary.org/b/isbn/${book.ISBN}-M.jpg?default=false`;
-
 				}
 				books.push(book);
 			}
@@ -66,7 +63,7 @@ export default (props) => {
 				...state,
 				books: Array.isArray(books) ? books : [books],
 				loaded: true,
-				error: false
+				error: false,
 			});
 		} catch (e) {
 			console.error(e);
@@ -88,7 +85,11 @@ export default (props) => {
 	return (
 		<div className="librarythings-shelf">
 			{state.loaded ? (
-				<BookList books={state.books} bookWidth={props.width} />
+				<BookList
+					books={state.books}
+					bookWidth={props.width}
+					showDetails={props.showDetails}
+				/>
 			) : (
 				<Loader />
 			)}

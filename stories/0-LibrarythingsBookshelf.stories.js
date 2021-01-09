@@ -2,37 +2,13 @@ import React from "react";
 import { LibrarythingsBookshelf } from "../dist/index";
 
 const sorts = [
-	"title",
-	"author",
-	"cover",
-	"rating",
-	"year_pub",
-	"date_pub",
-	"date_pub_edition",
-	"date_started",
-	"date_read",
-	"date_updated",
-	"date_added",
-	"recommender",
-	"avg_rating",
-	"num_ratings",
-	"review",
-	"read_count",
-	"votes",
 	"random",
-	"comments",
-	"notes",
-	"isbn",
-	"isbn13",
-	"asin",
-	"num_pages",
-	"format",
-	"position",
-	"shelves",
-	"owned",
-	"date_purchased",
-	"purchase_location",
-	"condition",
+	"entry",
+	"entry_REV",
+	"title",
+	"title_REV",
+	"author",
+	"author_REV"
 ];
 
 const shelves = ["read", "currently-reading", "to-read"];
@@ -43,14 +19,14 @@ export default {
 	argTypes: {
 		userId: {
 			name: "User ID",
-			defaultValue: "63515611",
+			defaultValue: "kylekarpack",
 			control: {
 				type: "text",
 			},
 		},
 		apiKey: {
 			name: "API Key",
-			defaultValue: "PsmXJodsWJgBPgTosjdEkQ",
+			defaultValue: "1921368573",
 			control: {
 				type: "text",
 			},
@@ -90,7 +66,7 @@ export default {
 		},
 		sort: {
 			name: "Sort Field",
-			defaultValue: "date_read",
+			defaultValue: "entry_REV",
 			control: {
 				type: "select",
 				options: sorts,

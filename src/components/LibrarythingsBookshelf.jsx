@@ -16,9 +16,9 @@ export default (props) => {
 		url.searchParams.set("responseType", "json");
 
 		url.searchParams.set("key", props.apiKey);
-		url.searchParams.set("per_page", props.limit || 10);
-		url.searchParams.set("shelf", props.shelf || "read");
-		url.searchParams.set("sort", props.sort || "date_read");
+		url.searchParams.set("resultsets", props.resultsets || "books,bookratings");
+		url.searchParams.set("max", props.limit || 10);
+		url.searchParams.set("booksort", props.sort || "entry_REV");
 		url.searchParams.set("order", props.order || "d");
 
 		// If this is provided as an empty string, you can get wildly different
@@ -47,7 +47,6 @@ export default (props) => {
 				}
 				books.push(book);
 			}
-			console.warn(books)
 			return books;
 		} else {
 			throw "Error: fetch is not defined in this environment";

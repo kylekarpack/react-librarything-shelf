@@ -15,16 +15,14 @@ export default (props) => {
 		url.searchParams.set("responseType", "json");
 
 		url.searchParams.set("key", props.apiKey);
-		url.searchParams.set("resultsets", props.resultsets || "books,bookratings");
-		url.searchParams.set("max", props.limit || 10);
+		url.searchParams.set("resultsets", "books");
+		url.searchParams.set("max", props.max || 10);
 		url.searchParams.set("booksort", props.sort || "entry_REV");
-		url.searchParams.set("order", props.order || "d");
-
-		// If this is provided as an empty string, you can get wildly different
-		// results for currently-reading
-		if (props.search) {
-			url.searchParams.set("search[query]", props.search);
-		}
+		url.searchParams.set("tagList", props.tagList || "");
+		url.searchParams.set("coverheight", props.coverheight || 200);
+		url.searchParams.set("coverwidth", props.coverwidth || 200);
+		url.searchParams.set("limit", props.limit);
+		url.searchParams.set("reviewsOnly", props.reviewsOnly ? 1 : 0);
 
 		return url;
 	};

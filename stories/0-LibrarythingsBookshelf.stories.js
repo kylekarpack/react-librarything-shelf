@@ -11,8 +11,6 @@ const sorts = [
 	"author_REV"
 ];
 
-const shelves = ["read", "currently-reading", "to-read"];
-
 export default {
 	title: "LibrarythingsBookshelf",
 	component: LibrarythingsBookshelf,
@@ -33,11 +31,9 @@ export default {
 		},
 		width: {
 			name: "Book Width",
-			defaultValue: 100,
+			defaultValue: "7rem",
 			control: {
-				type: "number",
-				min: 20,
-				max: 400,
+				type: "text",
 			},
 		},
 		showDetails: {
@@ -47,7 +43,21 @@ export default {
 				type: "boolean",
 			},
 		},
-		limit: {
+		reviewsOnly: {
+			name: "Only Books with Reviews",
+			defaultValue: false,
+			control: {
+				type: "boolean",
+			},
+		},
+		tagList: {
+			name: "Tag List",
+			defaultValue: "read",
+			control: {
+				type: "text",
+			},
+		},
+		max: {
 			name: "Number of Books",
 			defaultValue: 10,
 			control: {
@@ -56,12 +66,11 @@ export default {
 				max: 50,
 			},
 		},
-		shelf: {
-			name: "Shelf Name",
-			defaultValue: "read",
+		limit: {
+			name: "Limit",
 			control: {
 				type: "select",
-				options: shelves
+				options: ["", "bookswithstartorfinishdates"]
 			},
 		},
 		sort: {

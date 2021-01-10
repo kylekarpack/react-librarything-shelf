@@ -5,7 +5,6 @@ import Placeholder from "./Placeholder";
 
 const bookStyle = {
 	textAlign: "left",
-	marginBottom: "1vw",
 	cursor: "pointer",
 	breakInside: "avoid",
 };

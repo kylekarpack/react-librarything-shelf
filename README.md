@@ -1,8 +1,8 @@
 # react-librarything-shelf
-![build](https://github.com/kylekarpack/react-goodreads-shelf/workflows/build/badge.svg) ![CodeQL](https://github.com/kylekarpack/react-goodreads-shelf/workflows/CodeQL/badge.svg)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=kylekarpack_react-goodreads-shelf&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=kylekarpack_react-goodreads-shelf) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kylekarpack_react-goodreads-shelf&metric=coverage)](https://sonarcloud.io/dashboard?id=kylekarpack_react-goodreads-shelf)
+![build](https://github.com/kylekarpack/react-librarything-shelf/workflows/build/badge.svg)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=kylekarpack_react-librarything-shelf&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=kylekarpack_react-goodreads-shelf) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kylekarpack_react-librarything-shelf&metric=coverage)](https://sonarcloud.io/dashboard?id=kylekarpack_react-librarything-shelf)
 
-This React component allows you to display a public Goodreads shelf in a React application. It's a lot like the Goodreads JavaScript widget, but allows for more customization, better async loading, and React-like usage.
+This React component allows you to display a user's librarything books a React application. It's a lot like the LibraryThing JavaScript widget, but allows for more customization, better async loading, and React-like usage.
 
 ![Example image](/sample/sample.png)
 

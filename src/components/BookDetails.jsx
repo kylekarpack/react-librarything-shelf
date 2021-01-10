@@ -24,6 +24,20 @@ export default ({ book }) => {
 			thumb.style.float = "right";
 			thumb.style.marginLeft = "2rem";
 
+			const links = dom.querySelectorAll("a");
+			links.forEach((el) => (el.target = "_blank"));
+
+			const title = dom.querySelector(".thumbnail + h1 a");
+			if (title) {
+				const titleText = title.innerText;
+				const colonIndex = titleText.indexOf(":");
+				if (colonIndex > -1) {
+					const first = titleText.substr(0, colonIndex);
+					const last = titleText.substr(colonIndex + 1);
+					title.innerHTML = `${first}<div style="font-size:0.5em">${last}</div>`;
+				}
+			}
+
 			setState({
 				loading: false,
 				details: dom.body.innerHTML,

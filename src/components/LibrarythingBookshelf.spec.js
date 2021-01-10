@@ -1,7 +1,7 @@
 import { mount, shallow } from "enzyme";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import LibrarythingsBookshelf from "./LibrarythingsBookshelf";
+import LibrarythingBookshelf from "./LibrarythingBookshelf";
 
 describe("testing bookshelf", () => {
 	beforeEach(() => {
@@ -12,14 +12,14 @@ describe("testing bookshelf", () => {
 	});
 
 	it("renders without crashing", () => {
-		const shelf = shallow(<LibrarythingsBookshelf />);
+		const shelf = shallow(<LibrarythingBookshelf />);
 		expect(shelf).toMatchSnapshot();
 	});
 
 	it("passes props properly", async () => {
 		await act(async () => {
 			const shelf = mount(
-				<LibrarythingsBookshelf
+				<LibrarythingBookshelf
 					apiKey="test"
 					userId="testUser"
 					limit={15}

@@ -1,3 +1,3 @@
-import LibrarythingsBookshelf from "./components/LibrarythingsBookshelf";
+import LibrarythingBookshelf from "./components/LibrarythingBookshelf";
 
-export { LibrarythingsBookshelf };
+export { LibrarythingBookshelf };

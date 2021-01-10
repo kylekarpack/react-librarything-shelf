@@ -1,5 +1,5 @@
 import React from "react";
-import { LibrarythingsBookshelf } from "../dist/index";
+import { LibrarythingBookshelf } from "../dist/index";
 
 const sorts = [
 	"random",
@@ -12,8 +12,8 @@ const sorts = [
 ];
 
 export default {
-	title: "LibrarythingsBookshelf",
-	component: LibrarythingsBookshelf,
+	title: "LibrarythingBookshelf",
+	component: LibrarythingBookshelf,
 	argTypes: {
 		userId: {
 			name: "User ID",
@@ -84,4 +84,4 @@ export default {
 	},
 };
 
-export const Story = (args) => <LibrarythingsBookshelf {...args} />;
+export const Story = (args) => <LibrarythingBookshelf {...args} />;

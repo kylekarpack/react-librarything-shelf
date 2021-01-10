@@ -9,7 +9,7 @@ export default (props) => {
 	});
 
 	const getUrl = () => {
-		// Build a request to the LibraryThings API
+		// Build a request to the LibraryThing API
 		const url = new URL("https://www.librarything.com/api_getdata.php");
 		url.searchParams.set("userid", "kylekarpack");
 		url.searchParams.set("responseType", "json");
@@ -81,7 +81,7 @@ export default (props) => {
 	}, [props]);
 
 	return (
-		<div className="librarythings-shelf">
+		<div className="librarything-shelf">
 			{state.loaded ? (
 				<BookList
 					books={state.books}

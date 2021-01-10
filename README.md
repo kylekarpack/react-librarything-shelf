@@ -4,6 +4,9 @@
 
 This React component allows you to display a user's librarything books a React application. It's a lot like the LibraryThing JavaScript widget, but allows for more customization, better async loading, and React-like usage.
 
+## Demo
+[Storybook](https://kylekarpack.github.io/react-librarything-shelf/)
+
 ![Example image](/sample/sample.png)
 
 ## Installation

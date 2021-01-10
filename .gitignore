@@ -75,8 +75,8 @@ typings/
 # FuseBox cache
 .fusebox/
 
+docs/
 dist/
 __snapshots__/
 test-report.xml
 
-docs/

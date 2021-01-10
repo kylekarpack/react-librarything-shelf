@@ -78,3 +78,5 @@ typings/
 dist/
 __snapshots__/
 test-report.xml
+
+docs/

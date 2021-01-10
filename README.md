@@ -35,16 +35,14 @@ You can also set some options as supported by the Goodreads API:
 
 | Option | Type | Description | Default |
 | ------ | ---- | ----------- | ------- |
-| shelf  | string | The shelf from which to fetch books | read
-| sort  | string | The order in which to sort the results returned | date_read
-| limit  | number | The maximum number of books to be returned | 10
+| sort  | string | The order in which to sort the results returned | entry_REV
+| max  | number | The maximum number of books to be returned | 10
+| showDetails  | boolean | Show the author and title | false
+| reviewsOnly  | boolean | Show only books with review | false
+| tagList  | string | Comma-separated tags to filter by | ""
 | width | number | Minimum width allowed for each book | 100
 | details | boolean | Whether to show book details like book title, author, and summary | false
 
 ## Development
 - `yarn start` to watch changes and build
 - `yarn storybook` to launch storybook for testing
-
-## ToDo
-
-Short-term plans include adding additional API options and styling

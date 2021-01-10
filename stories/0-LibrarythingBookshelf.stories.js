@@ -63,7 +63,7 @@ export default {
 			control: {
 				type: "number",
 				min: 1,
-				max: 50,
+				max: 100,
 			},
 		},
 		limit: {

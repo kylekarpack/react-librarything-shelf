@@ -9,10 +9,10 @@ describe("testing book list", () => {
 	});
 
 	it("passes props correctly", () => {
-		const id = Math.round(Math.random() * 100000);
-		const list = mount(<BookList books={[{ id }]} />);
+		const book_id = Math.round(Math.random() * 100000);
+		const list = mount(<BookList books={[{ book_id }]} />);
 		const books = list.props().books;
 		expect(books.length).toEqual(1);
-		expect(books[0].id).toEqual(id);
+		expect(books[0].book_id).toEqual(book_id);
 	});
 });

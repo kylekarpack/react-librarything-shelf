@@ -31,7 +31,7 @@ export default {
 		},
 		width: {
 			name: "Book Width",
-			defaultValue: "7rem",
+			defaultValue: "6rem",
 			control: {
 				type: "text",
 			},

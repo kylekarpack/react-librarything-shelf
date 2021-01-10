@@ -30,7 +30,7 @@ export default ({ book }) => {
 			const title = dom.querySelector(".thumbnail + h1 a");
 			if (title) {
 				const titleText = title.innerText;
-				const colonIndex = titleText.indexOf(":");
+				const colonIndex = titleText?.indexOf(":");
 				if (colonIndex > -1) {
 					const first = titleText.substr(0, colonIndex);
 					const last = titleText.substr(colonIndex + 1);

@@ -7,7 +7,7 @@ describe("testing bookshelf", () => {
 	beforeEach(() => {
 		fetch.resetMocks();
 		fetch.mockResponseOnce(
-			JSON.stringify({ GoodreadsResponse: { reviews: { review: [] } } })
+			JSON.stringify({ books: { 1: { book_id: 1, cover: "" }} })
 		);
 	});
 
